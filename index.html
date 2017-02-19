@@ -1,72 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Transaction Manager</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet"/>
-    <link href="css/bootstrap.css" rel="stylesheet"/>
-    <link href="css/mdb.css" rel="stylesheet"/>
-    <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/mdb.js"></script>
-    <script type="text/javascript" src="js/tether.js"></script>
-    <script>
-      new WOW().init();
-    </script>
-   </head>
-  <body class="body-background">
+	<head>
+	    <meta charset="utf-8" />
+	    <title>Transaction Manager</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link href="css/style.css" rel="stylesheet"/>
+	    <link href="css/bootstrap.css" rel="stylesheet"/>
+	    <link href="css/mdb.css" rel="stylesheet"/>
+	    <!-- Google Fonts -->
+  		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  		<!-- FontAwesome Icons -->
+  		<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	    <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.js"></script>
+	    <script type="text/javascript" src="js/mdb.js"></script>
+	    <script type="text/javascript" src="js/tether.js"></script>
+	    <script>
+	      new WOW().init();
+		</script>
+   	</head>
+  	<body class="body-background">
 
-    <!-- slideInDown makes the container animate and slide down using wow animations provided by mdbootstrap-->
-    <div class="container authentication-block  wow slideInDown">
+    	<!-- slideInDown makes the container animate and slide down using wow animations provided by mdbootstrap-->
+    	<div class="container authentication-block wow slideInDown">
+	    	<div class="row home-page-wrapper">
+		    	<div class="z-depth-5 col-md-12">
+		     
+		      		<div class="row">
+		        		<div class="col-md-12 text-center login-heading">
+			      			<h2>Welcome to Transaction Manager</h2>
+		        		</div>
+		      		</div>
 
-      <div class="row">
-	    <div class="z-depth-5 col-md-12">
-         
-          <div class="row">
-	        <div class="col-md-12 text-center login-heading">
-		      <p><h2>Welcome to Transaction Manager</h2></p>
-	        </div>
-          </div>
+		    		<!-- Row for log-in and registration-forms -->
+		      		<div class="row">
+		     			<!-- Column for login form starts -->
+		        		<div class="col-md-4 offset-md-1 text-center">
+		        			
+		          			<h3><small>Log in here</small></h3>
+		          			
+		          			<form>
+			    	    		<div class="form-group">
+			      	       			<input type="text" class="form-control" name="username" id="loginUsername" placeholder="Username">
+			    				</div>
+					    		<div class="form-group">
+					      		<input type="password" class="form-control" name="password" id="loginPassword" placeholder="Password">
+			   		    		</div>
+					    		<div class="form-group">
+					       			<button type="submit" class="btn btn-default btn-login">Log in</button>
+					    		</div>
+			  	 			</form>
+		        		</div><!-- /.Log in form ends -->
+						
+						<div class="col-md-1 offset-md-1 form-partition"></div><!-- / .col-md-1 .offset-md-1 -->
+		       	 		
+		       	 		<!-- Column for registration form starts-->
+						<div class="col-md-4 text-center">
+							<h3><small>Register here</small></h3>
+							
+							<div id="success-message" class="alert alert-success">
+								<strong>Success</strong>
+							</div><!-- /.alert .alert-success -->
+							
+							<form action="javascript:void(0)" method="post" onsubmit="onFormSubmit()">
+								<div class="form-group">
+									<input type="text" class="form-control" name="emailID" id="signupemailID" placeholder="Email ID">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="username" id="signupUsername" placeholder="Username">
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" id="signupPassword" placeholder="Password">
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" name="password" id="confirmPassword" placeholder="Confirm Password">
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-default btn-login">Register</button>
+								</div>
+							</form>
+						</div><!-- / .col-md-5 -->
+						<div class="offset-md-1"></div>
+					</div><!-- /.row -->
+		  		</div><!-- /.z-depth-5 .col-md-12-->
+    		</div><!-- /.row -->
+  		</div><!-- / .container .authentication-block .wow .slideInDown -->
 
-          <!-- Row for log in and registration forms -->
-          <div class="row forms">
-
-	     	<!-- 6-width column for log in form -->
-	        <div class="col-md-6 text-center log-in-block">
-	          <p class="login-title">Log in here</p>
-	          <div class="row">
-	            <div class="col-md-2"></div>
-	            <div class="col-md-10">
-	      	      <form class="form-horizontal log-in-form">
-		    	    <div class="form-group">
-		      	      <div class="col-md-offset-2 col-md-10">
-		        	    <input type="text" class="form-control" name="username" id="loginUsername" placeholder="Username">
-		      		  </div>
-		    		</div>
-				    <div class="form-group">
-				      <div class="col-md-offset-2 col-md-10">
-				        <input type="password" class="form-control" name="password" id="loginPassword" placeholder="Password">
-				      </div>
-		   		    </div>
-				    <div class="form-group">
-				      <div class="col-md-offset-2 col-md-10">
-				        <button type="submit" class="btn btn-default btn-login">Log in</button>
-				      </div>
-				    </div>
-		  	      </form>
-		  		</div>
-		      </div>
-	        </div>
-
-	        <!--TODO 6 width column for registration form-->
-	        
-
-
-	  </div>
-    </div> 
-  </div>
-</div>
-
-</body>
+  		<!-- Importing Javascript Files -->
+  		<script type="text/javascript" src="js/script.js"></script>
+	</body>	
 </html>

@@ -36,10 +36,22 @@ a:hover {
 	background-color: #ffffff;
 	color: #000000;
 }
+.home-page-wrapper{
+	padding-top: 15px;
+}
+
+.form-partition{
+	border-left: 1px solid #e0e0e0;
+}
+
+#success-message{
+	display:none;
+}
 
 .login-heading {
 	padding-top: 2px;
 	margin-bottom: 30px;
+
 }
 
 .forms {
@@ -49,8 +61,17 @@ a:hover {
 .login-block {
 	border: 2ox solid;
 	padding-right: 20px;
-	color: #ffffff;
+	color: #000000;
+	float:left;
 }
+.signup-block {
+	border: 2ox solid;
+	padding-left: 20px;
+	color: #000000;
+	margin-right:20px;
+	float:right;
+}
+
 
 .btn-login {
 	margin-top: 15px;
@@ -86,4 +107,12 @@ a:hover {
 	.log-in-form div {
 		margin: 30px;
 	}
+}
+
+@media only screen and (min-width : 992px) {
+ 	
+ 	.sign-up-form div {
+	margin: 30px;
+	}
+
 }
