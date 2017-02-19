@@ -8,6 +8,10 @@
     margin-top: 50px;
 }
 
+.table-responsive{
+	margin-bottom: 40px;
+}
+
 thead {
 	font-weight: bold;
 	font-size: 18px;
@@ -48,14 +52,6 @@ a:hover {
 	color: #ffffff;
 }
 
-@media only screen and (min-width : 992px) {
- 	
- 		.log-in-form div {
-		margin: 30px;
-		}
-
-    }
-
 .btn-login {
 	margin-top: 15px;
 }
@@ -76,4 +72,18 @@ a:hover {
 
 #myModal {
 	background: url('../img/tile.jpg') top left repeat;
+}
+
+@media screen and (max-width : 568px) {
+	.dashboard-container {
+		margin-right: 30px;
+		margin-top: -50px;
+	}
+}
+
+@media only screen and (min-width : 992px) {
+ 	
+	.log-in-form div {
+		margin: 30px;
+	}
 }
