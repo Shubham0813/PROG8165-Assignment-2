@@ -1,7 +1,31 @@
 /* CUSTOM STYLES */
 
+
 .body-background {
-	background-color: #0d47a1;
+	background-color: #dd5638;
+	font-family: 'Raleway', Helvetica, sans-serif;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+thead {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+
+i.fa {
+    padding-right: 10px;
+}
+
+
+a:link, a:visited {
+    color: #dd5638;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #c9302c;
 }
 
 .authentication-block {
@@ -38,11 +62,18 @@
 
 
 .dashboard-container {
-	padding: 20px;
-	background-color: #ffffff;
+	
+	background: url('../img/tile.jpg') top left repeat;
+
 }
 
 .dashboard-heading {
 	padding-top: 15px;
 	padding-bottom: 25px;
+	background-color: #3e4249;
+	color: white;
+}
+
+#myModal {
+	background: url('../img/tile.jpg') top left repeat;
 }
