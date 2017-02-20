@@ -1,11 +1,13 @@
 /* CUSTOM STYLES */
 
-
 .body-background {
 	background-color: #dd5638;
 	font-family: 'Raleway', Helvetica, sans-serif;
     font-size: 16px;
-    margin-top: 50px;
+}
+
+.add-filter-buttons {
+	text-align: center;
 }
 
 .table-responsive{
@@ -51,7 +53,6 @@ a:hover {
 .login-heading {
 	padding-top: 2px;
 	margin-bottom: 30px;
-
 }
 
 .forms {
@@ -81,6 +82,7 @@ a:hover {
 .dashboard-container {
 	
 	background: url('../img/tile.jpg') top left repeat;
+	margin-top: 50px;
 
 }
 
@@ -91,8 +93,10 @@ a:hover {
 	color: white;
 }
 
-#myModal {
-	background: url('../img/tile.jpg') top left repeat;
+.transaction-value {
+	font-family: 'Arial';
+	font-size: 16px;
+	font-style: normal;
 }
 
 @media screen and (max-width : 568px) {
@@ -107,12 +111,15 @@ a:hover {
 	.log-in-form div {
 		margin: 30px;
 	}
-}
 
-@media only screen and (min-width : 992px) {
- 	
  	.sign-up-form div {
 	margin: 30px;
 	}
 
+}
+
+@media only screen and (min-width: 768px) {
+	.add-filter-buttons {
+	text-align: right;
+	}
 }
