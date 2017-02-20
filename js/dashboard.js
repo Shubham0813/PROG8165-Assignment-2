@@ -18,10 +18,10 @@ function appendTransactionRow(transaction, index) {
 		      "<td>" + transaction.Date + "</td>" +
 		      "<td>" + transaction.Description + "</td>";
 	
-	if(transaction.Value[0] == "-"){
-		row += "<td><h4><span class='transaction-value badge red'>" + transaction.Value + "</span><h4></td>";
+	if(transaction.Value < 0){
+		row += "<td><h4><span class='transaction-value badge red'>-$" + ((transaction.Value) * -1).toFixed(2) + "</span><h4></td>";
 	} else {
-		row += "<td><h4><span class='transaction-value badge green'>" + transaction.Value + "</span><h4></td>";
+		row += "<td><h4><span class='transaction-value badge green'>$" + transaction.Value.toFixed(2) + "</span><h4></td>";
 	}
 		
 	row += "<td><button class='btn btn-sm btn-default waves-effect view-detail-button' data-id='" + index + 
@@ -61,23 +61,23 @@ function getAllTransactions() {
 	return [{
 		"Date": "20 Jan, 2017",
 		"Description": "Salary",
-		"Value": "$4500",
+		"Value": 4500,
 		"Location": "Kitchener"
 	},
 	{
 		"Date": "21 Jan, 2017",
 		"Description": "Grocery",
-		"Value": "-$51.65"
+		"Value": -51.65
 	},
 	{
 		"Date": "22 Jan, 2017",
 		"Description": "Grocery",
-		"Value": "-$22.20",
+		"Value": -22.20,
 		"Location": "Toronto"
 	},
 	{
 		"Date": "23 Jan, 2017",
 		"Description": "Phone Bill",
-		"Value": "-$56.50"
+		"Value": -56.50
 	}];
 }

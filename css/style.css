@@ -6,6 +6,39 @@
     font-size: 16px;
 }
 
+
+/* index.html */
+.authentication-block {
+	background-color: #ffffff;
+	color: #000000;
+}
+.home-page-wrapper{
+	padding-top: 15px;
+}
+
+.form-partition{
+	border-left: 1px solid #e0e0e0;
+}
+
+#success-message{
+	display:none;
+}
+
+.login-heading {
+	padding-top: 2px;
+	margin-bottom: 30px;
+}
+
+.forms {
+	margin-bottom: 15px;
+}
+
+.btn-login {
+	margin-top: 15px;
+}
+
+
+/* dashboard.html */
 .add-filter-buttons {
 	text-align: center;
 }
@@ -34,51 +67,6 @@ a:hover {
     color: #c9302c;
 }
 
-.authentication-block {
-	background-color: #ffffff;
-	color: #000000;
-}
-.home-page-wrapper{
-	padding-top: 15px;
-}
-
-.form-partition{
-	border-left: 1px solid #e0e0e0;
-}
-
-#success-message{
-	display:none;
-}
-
-.login-heading {
-	padding-top: 2px;
-	margin-bottom: 30px;
-}
-
-.forms {
-	margin-bottom: 15px;
-}
-
-.login-block {
-	border: 2ox solid;
-	padding-right: 20px;
-	color: #000000;
-	float:left;
-}
-.signup-block {
-	border: 2ox solid;
-	padding-left: 20px;
-	color: #000000;
-	margin-right:20px;
-	float:right;
-}
-
-
-.btn-login {
-	margin-top: 15px;
-}
-
-
 .dashboard-container {
 	
 	background: url('../img/tile.jpg') top left repeat;
@@ -99,23 +87,16 @@ a:hover {
 	font-style: normal;
 }
 
+.view-detail-button {
+	font-size: 11px !important;
+}
+
+
 @media screen and (max-width : 568px) {
 	.dashboard-container {
 		margin-right: 30px;
 		margin-top: -50px;
 	}
-}
-
-@media only screen and (min-width : 992px) {
- 	
-	.log-in-form div {
-		margin: 30px;
-	}
-
- 	.sign-up-form div {
-	margin: 30px;
-	}
-
 }
 
 @media only screen and (min-width: 768px) {
