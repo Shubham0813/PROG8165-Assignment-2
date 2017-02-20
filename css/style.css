@@ -1,9 +1,13 @@
 /* CUSTOM STYLES */
 
 .body-background {
-	background-color: #0d47a1;
+	background-color: #dd5638;
+	font-family: 'Raleway', Helvetica, sans-serif;
+    font-size: 16px;
 }
 
+
+/* index.html */
 .authentication-block {
 	background-color: #ffffff;
 	color: #000000;
@@ -23,53 +27,80 @@
 .login-heading {
 	padding-top: 2px;
 	margin-bottom: 30px;
-
 }
 
 .forms {
 	margin-bottom: 15px;
 }
 
-.login-block {
-	border: 2ox solid;
-	padding-right: 20px;
-	color: #000000;
-	float:left;
-}
-.signup-block {
-	border: 2ox solid;
-	padding-left: 20px;
-	color: #000000;
-	margin-right:20px;
-	float:right;
-}
-
-@media only screen and (min-width : 992px) {
- 	
- 		.log-in-form div {
-		margin: 30px;
-		}
-
-    }
-	@media only screen and (min-width : 992px) {
- 	
- 		.sign-up-form div {
-		margin: 30px;
-		}
-
-    }
-
 .btn-login {
 	margin-top: 15px;
 }
 
 
+/* dashboard.html */
+.add-filter-buttons {
+	text-align: center;
+}
+
+.table-responsive{
+	margin-bottom: 40px;
+}
+
+thead {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+
+i.fa {
+    padding-right: 10px;
+}
+
+
+a:link, a:visited {
+    color: #dd5638;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #c9302c;
+}
+
 .dashboard-container {
-	padding: 20px;
-	background-color: #ffffff;
+	
+	background: url('../img/tile.jpg') top left repeat;
+	margin-top: 50px;
+
 }
 
 .dashboard-heading {
 	padding-top: 15px;
 	padding-bottom: 25px;
+	background-color: #3e4249;
+	color: white;
+}
+
+.transaction-value {
+	font-family: 'Arial';
+	font-size: 16px;
+	font-style: normal;
+}
+
+.view-detail-button {
+	font-size: 11px !important;
+}
+
+
+@media screen and (max-width : 568px) {
+	.dashboard-container {
+		margin-right: 30px;
+		margin-top: -50px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.add-filter-buttons {
+	text-align: right;
+	}
 }
