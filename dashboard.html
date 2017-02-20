@@ -32,7 +32,49 @@
           <p><h3>Most recent transactions</h3></p>
 		</div>
 		<div class="col-md-8 text-right">
-		  <button type="button" id="add" class="btn btn-success">Add</button>
+		   <button type="button" id="add" class="btn btn-success" data-toggle="modal" data-target="#addTrasactionModal">Add</button>
+			<div class="modal fade" id="addTrasactionModal" role="dialog">
+		<div class="modal-dialog">
+    
+      <!-- Modal content-->
+		<div class="modal-content text-center">
+			<div class="modal-header text-center">
+				<h4 class="modal-title">Add Transaction</h4>
+			</div>
+			<div class="modal-body">
+		 
+			<form class="form-horizontal">
+			<div class="control-group">
+					<label class="control-label" for="inputEmail"></label>
+				<div class="controls">
+					<input type="text" id="inputDate" placeholder="Date (mm/dd/yyyy)">
+				</div>
+			</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword"></label>
+				<div class="controls">
+					<input type="text" id="inputText" placeholder="Description">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputValue"></label>
+				<div class="controls">
+					<input type="text" id="inputValue" placeholder="Value">
+					</div>
+				</div>
+			</form>
+			
+        </div><!-- Close Modal Content-->
+        <div class="modal-footer">
+		
+		<button type="button" class="btn btn-default " >Add</button>
+	
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 		  <div class="btn-group">
 		    <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</button>
 		    <div class="dropdown-menu">
