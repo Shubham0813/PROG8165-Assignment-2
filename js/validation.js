@@ -1,11 +1,72 @@
 window.onload = function() {
   	new WOW().init();
+	validateLoginForm();
 	validateRegistrationForm();
+	validateAddTransactionForm();
 };
 
-function validateRegistrationForm()
-{
+function validateLoginForm() {
+	
+	var form = document.getElementById("loginForm");
+
+	if(form) {
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+
+			var username = document.getElementById("loginUsername");
+			var password = document.getElementById("loginPassword");
+
+			if(username && password) {
+				var usernameOk = validateUsername(username.value);
+				var passwordOk = validatePassword(password.value);
+
+				if (usernameOk && passwordOk)
+					location.href="dashboard.html";
+			}
+		});
+	}
+}
+
+function validateUsername(username) {
+    var errorElement = document.getElementById("usernameError");
+	
+	if(!errorElement) 
+		return;
+
+	var regExpEmail = new RegExp("^.{5,}$");
+
+	if(!regExpEmail.test(username)) {
+		errorElement.innerHTML = "Username must be at least 5 characters.";
+		return false;
+	} else {
+		errorElement.innerHTML = "";
+		return true;
+	}	
+}
+
+function validatePassword(password) {
+    var errorElement = document.getElementById("passwordError");
+	
+	if(!errorElement) 
+		return;
+
+	var regExpEmail = new RegExp("^.{4,}$");
+
+	if(!regExpEmail.test(password)) {
+		errorElement.innerHTML = "Password must be at least 4 characters.";
+		return false;
+	} else {
+		errorElement.innerHTML = "";
+		return true;
+	}	
+}
+
+function validateRegistrationForm() {
 	var form = document.getElementById("registrationForm");
+
+	if(!form)
+		return;
+
 	form.addEventListener('submit',function(e) {
 		e.preventDefault();
 
@@ -31,6 +92,7 @@ function validateRegistrationForm()
 		}
 	});
 }
+
 
 function validateEmail(email) {
 	
@@ -142,4 +204,101 @@ function validateConfirmPassword(confirmPassword) {
 			return true;
 		}
 	}
+}
+
+function validateAddTransactionForm() {
+	var form = document.getElementById("addTransactionForm");
+
+	if(form) {
+		
+		form.addEventListener('submit',function(e) {
+			e.preventDefault();
+
+			var inputDate = document.getElementById("inputDate");
+			var description = document.getElementById("inputDescription");
+			var val = document.getElementById("inputValue");
+
+			if(inputDate && description && val){
+				var inputDateOk = validateDate(inputDate.value);
+				var descriptionOk = validateDescription(description.value);
+				var valueOk = validateValue(val.value);
+					
+				if(inputDateOk && descriptionOk && valueOk) {
+						alert("Success");
+				}
+			}
+		 });
+	}
+}
+
+function validateDate(dateValue) {
+    
+    var dateError = document.getElementById("dateError");
+    
+    if(!dateError)
+    	return;
+
+    var regDate = new RegExp("^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$");
+
+    if (!regDate.test(dateValue)) {
+        dateError.innerHTML = "Please enter the Date (in correct format)";
+        return false;
+    }
+    else {
+    	dateError.innerHTML = "";
+    	return true;
+    }
+}
+
+function validateDescription(description) {
+	
+    var errorElement = document.getElementById("descriptionError");
+
+	if(!descriptionError) 
+		return;
+
+	var regDescription = new RegExp("^[A-Za-z0-9_\\- ]{10,}$");
+	
+	if(!regDescription.test(description)) {
+		errorElement.innerHTML = "Minimum 10 characters and can only include characters,numbers,spaces,-,_";
+		return false;
+	} else {
+		errorElement.innerHTML = "";
+		return true;
+	}	
+}
+
+function validateValue(inputValue) {
+	
+	var errorElement = document.getElementById("valueError");
+    
+    if(!errorElement) 
+    	return false;
+
+	var regValue = new RegExp("^[+,-]\\.?[0-9]+(\\.[0-9]+)?$");
+
+	if(!regValue.test(inputValue)) {
+		errorElement.innerHTML = "Amount requires +/- prefix.";
+		return false;
+	} else {
+		errorElement.innerHTML = "";
+	}
+
+	
+	var amount = 0;
+	
+	try {
+		var amount = Number.parseFloat(inputValue.substr(1)).toFixed(2);	
+	} catch(e) {
+		errorElement.innerHTML = "Invalid amount.";
+		return false;
+	}
+
+	if(amount > 10000){
+		errorElement.innerHTML = "Amount exceeds +/- 10,000.00";
+		return false;
+	}
+
+	errorElement.innerHTML = "";
+	return true;
 }
