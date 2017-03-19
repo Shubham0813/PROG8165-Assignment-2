@@ -46,28 +46,30 @@
 								<div class="modal-header text-center">
 									<h4 class="modal-title">Add Transaction</h4>
 								</div>
-								
-								<div class="modal-body">
-									<form class="form-horizontal" id="form-horizontal" method="post">
+								<form class="form-horizontal" id="addTransactionForm" method="post">
+								    <div class="modal-body">
 										<div class="control-group">
 											<label class="control-label" for="inputDate" ></label>
 											<div class="controls">
-												<input type="text" id="inputDate" placeholder="Date (mm/dd/yyyy)" onkeyup="validateDate()" onblur="validateDate()">
+												<input type="text" id="inputDate" placeholder="Date (mm/dd/yyyy)"
+                                                 onkeyup="validateDate(this.value)" onblur="validateDate(this.value)">
 												<span class="form-validation-message" id="dateError"></span>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="inputDescription"></label>
 											<div class="controls">
-												<input type="text" id="inputDescription" placeholder="Description" onkeyup="validateDescription(this.value)" onblur="validateDescription(this.value)">
+												<input type="text" id="inputDescription" placeholder="Description" 
+                                                onkeyup="validateDescription(this.value)" onblur="validateDescription(this.value)">
 												<span class="form-validation-message" id="descriptionError"></span>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="inputValue"></label>
 											<div class="controls">
-												<input type="text" id="inputValue" placeholder="Value" onkeyup="validateDescription(this.value)" onblur="validateValue(this.value)">
-												<span class="form-validation-message" id="ValueError"></span>
+												<input type="text" id="inputValue" placeholder="Value" 
+                                                onkeyup="validateValue(this.value)" onblur="validateValue(this.value)">
+												<span class="form-validation-message" id="valueError"></span>
 											</div>
 										</div>
 										<div class="control-group">
@@ -76,16 +78,12 @@
 												<input type="text" id="inputLocation" placeholder="Location (Optional)">
 											</div>
 										</div>
-									</form>
-
-								</div>
-
-								<div class="modal-footer">
-
-									<button type="button" class="btn btn-default " >Add</button>
-
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								</div>
+							     	</div>
+    								<div class="modal-footer">
+                                        <button type="submit" class="btn btn-default">Add</button>
+    									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    								</div>
+                                </form>
 							</div>
 							<!-- /.Modal Content Ends -->
 						</div>
