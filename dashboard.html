@@ -15,9 +15,6 @@
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/mdb.js"></script>
         <script type="text/javascript" src="js/tether.js"></script>
-        <script>
-          new WOW().init();
-        </script>
     </head>
     <body class="body-background">
 
@@ -49,25 +46,30 @@
 								<div class="modal-header text-center">
 									<h4 class="modal-title">Add Transaction</h4>
 								</div>
-								
-								<div class="modal-body">
-									<form class="form-horizontal">
+								<form class="form-horizontal" id="addTransactionForm" method="post">
+								    <div class="modal-body">
 										<div class="control-group">
-											<label class="control-label" for="inputEmail"></label>
+											<label class="control-label" for="inputDate" ></label>
 											<div class="controls">
-												<input type="text" id="inputDate" placeholder="Date (mm/dd/yyyy)">
+												<input type="text" id="inputDate" placeholder="Date (mm/dd/yyyy)"
+                                                 onkeyup="validateDate(this.value)" onblur="validateDate(this.value)">
+												<span class="form-validation-message" id="dateError"></span>
 											</div>
 										</div>
 										<div class="control-group">
-											<label class="control-label" for="inputPassword"></label>
+											<label class="control-label" for="inputDescription"></label>
 											<div class="controls">
-												<input type="text" id="inputText" placeholder="Description">
+												<input type="text" id="inputDescription" placeholder="Description" 
+                                                onkeyup="validateDescription(this.value)" onblur="validateDescription(this.value)">
+												<span class="form-validation-message" id="descriptionError"></span>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="inputValue"></label>
 											<div class="controls">
-												<input type="text" id="inputValue" placeholder="Value">
+												<input type="text" id="inputValue" placeholder="Value" 
+                                                onkeyup="validateValue(this.value)" onblur="validateValue(this.value)">
+												<span class="form-validation-message" id="valueError"></span>
 											</div>
 										</div>
 										<div class="control-group">
@@ -76,16 +78,12 @@
 												<input type="text" id="inputLocation" placeholder="Location (Optional)">
 											</div>
 										</div>
-									</form>
-
-								</div>
-
-								<div class="modal-footer">
-
-									<button type="button" class="btn btn-default " >Add</button>
-
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								</div>
+							     	</div>
+    								<div class="modal-footer">
+                                        <button type="submit" class="btn btn-default">Add</button>
+    									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    								</div>
+                                </form>
 							</div>
 							<!-- /.Modal Content Ends -->
 						</div>
@@ -153,6 +151,7 @@
         <!-- /.Container ends -->  
 
         <!-- Importing Javascript File-->
-        <script type="text/javascript" src="js/dashboard.js"></script>  
+        <script type="text/javascript" src="js/dashboard.js"></script>
+        <script type="text/javascript" src="js/validation.js"></script>  
     </body>
 </html>
