@@ -1,4 +1,5 @@
 (function() {
+	new WOW().init();
 	fillTransactionTable()
 })()
 
@@ -29,12 +30,17 @@ function appendTransactionRow(transaction, index) {
           	  "</td>"+
 		      "</tr>";
 
-	document.getElementById("tableBody").innerHTML += row;
+	var tableBody = document.getElementById("tableBody")
+	if(tableBody) {
+		tableBody.innerHTML += row;
+	}
 }
 
 function addDetailButtonListeners() {
 	var detailButtons = document.getElementsByClassName("view-detail-button");
-	Array.from(detailButtons).forEach(addDetailListener);
+	if(detailButtons) {
+		Array.from(detailButtons).forEach(addDetailListener);	
+	}
 }
 
 function addDetailListener(button, index) {
@@ -43,14 +49,17 @@ function addDetailListener(button, index) {
 		var trans = getAllTransactions();
     	var id = this.getAttribute("data-id");
     	
-    	if(trans[id].Location == null) {
-			document.getElementById("details").innerHTML = "<p>Date: " + trans[id].Date + "</p>" + 
-    												   	   "<p>Description: " + trans[id].Description + "</p>";
-    	}
-    	else {
-    		document.getElementById("details").innerHTML = "<p>Date: " + trans[id].Date + "</p>" + 
+    	var details = document.getElementById("details"); 
+		if(details) {
+			if(trans[id].Location == null) {
+				details.innerHTML = "<p>Date: " + trans[id].Date + "</p>" + 
+    												   	   "<p>Description: " + trans[id].Description + "</p>";	
+			}
+    		else {
+    			details.innerHTML = "<p>Date: " + trans[id].Date + "</p>" + 
     												   "<p>Location: " + trans[id].Location + "</p>";
-    	}
+    		}
+		}	
 	};
 
 	button.addEventListener('click', showTransactionDetails, false);
