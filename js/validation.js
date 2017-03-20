@@ -47,7 +47,7 @@ function validateLoginForm() {
 function validateUsername(username) {
 	var regExpEmail = new RegExp("^.{5,}$");
 
-	if(!regExpEmail.test(username)) {
+	if(!regExpEmail.test(username.trim())) {
 		setValueOf("usernameError", "Username must be at least 5 characters.");
 		return false;
 	}
@@ -59,7 +59,7 @@ function validateUsername(username) {
 function validatePassword(password) {
 	var regExpEmail = new RegExp("^.{4,}$");
 
-	if(!regExpEmail.test(password)) {
+	if(!regExpEmail.test(password.trim())) {
 		setValueOf("passwordError", "Password must be at least 4 characters.");
 		return false;
 	}
@@ -109,7 +109,7 @@ function validateSignupUsername(username) {
 
 	var regExpUsername = new RegExp("[A-z0-9_\\- ]{5,}$");
 
-	if(!regExpUsername.test(username)) {
+	if(!regExpUsername.test(username.trim())) {
 		setValueOf("signupUsernameError", "Username must be of minimum 5 characters and can include A-z, 0-9, _, - and spaces(no comma)");
 		return false;
 	}
@@ -149,7 +149,7 @@ function validateSignupPassword(password) {
 	
 	var regExpPassword = new RegExp("(.){4,}");
 
-	if(!regExpPassword.test(password)) {
+	if(!regExpPassword.test(password.trim())) {
 		setValueOf("signupPasswordError", "Password must be minimum 4 characters long");
 		return false;
 	}
@@ -162,7 +162,7 @@ function validateConfirmPassword(confirmPassword) {
 	
 	var password = getValue("signupPassword");
 
-	if(confirmPassword !== password) {
+	if(confirmPassword !== password.trim()) {
 		setValueOf("confirmPasswordError", "Passwords do not match");
 		return false;	
 	}
