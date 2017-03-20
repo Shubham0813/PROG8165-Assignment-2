@@ -107,7 +107,7 @@ function validateEmail(email) {
 
 function validateSignupUsername(username) {
 
-	var regExpUsername = new RegExp("[A-z0-9_\\- ]{5,}$");
+	var regExpUsername = new RegExp("^[A-z0-9_\\- ]{5,}$");
 
 	if(!regExpUsername.test(username.trim())) {
 		setValueOf("signupUsernameError", "Username must be of minimum 5 characters and can include A-z, 0-9, _, - and spaces(no comma)");
@@ -120,7 +120,7 @@ function validateSignupUsername(username) {
 
 function validateFirstName(firstName) {
 	
-	var regExpFirstName = new RegExp("[A-Z][a-z0-9]+");
+	var regExpFirstName = new RegExp("^[A-Z][a-z0-9 ]+$");
 
 	if(!regExpFirstName.test(firstName)) {
 		setValueOf("firstNameError", "First name can consist of only A-z, 0-9 and spaces. It should start with first letter capital and rest must be lowercase");
@@ -133,7 +133,7 @@ function validateFirstName(firstName) {
 
 function validateLastName(lastName) {
 	
-	var regExpLastName = new RegExp("[A-Z][a-z0-9]+");
+	var regExpLastName = new RegExp("^[A-Z][a-z0-9]+$");
 
 	if(!regExpLastName.test(lastName)) {
 		setValueOf("lastNameError", "Last name can consist of only A-z, 0-9 and spaces." +
